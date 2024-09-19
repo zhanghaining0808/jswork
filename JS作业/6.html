@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算长方形的周长和面积</title>
+  </head>
+  <body>
+    <label for="长方形的长">长方形的长:</label>
+    <input type="number" id="长方形的长" readonly /><br /><br />
+
+    <label for="长方形的宽">长方形的宽:</label>
+    <input type="number" id="长方形的宽" readonly /><br /><br />
+
+    <label for="长方形的周长">长方形的周长:</label>
+    <input type="number" id="长方形的周长" readonly /><br /><br />
+
+    <label for="长方形的面积">长方形的面积:</label>
+    <input type="number" id="长方形的面积" readonly /><br /><br />
+
+    <script>
+      window.onload = function () {
+        var a, b, d, e;
+        a = parseFloat(prompt("请输入长方形的长: ", 0));
+        b = parseFloat(prompt("请输入长方形的宽: ", 0));
+        if (!isNaN(a) && !isNaN(b)) {
+          d = (a + b) * 2;
+          e = a * b;
+          document.getElementById("长方形的长").value = a;
+          document.getElementById("长方形的宽").value = b;
+          document.getElementById("长方形的周长").value = d.toFixed(2);
+          document.getElementById("长方形的面积").value = e.toFixed(2);
+        } else {
+          if (isNaN(a) && isNaN(b)) {
+            alert("请输入正确的数字的长!");
+          }
+          if (isNaN(a) && isNaN(b)) {
+            alert("请输入正确的数字的宽!");
+          }
+          if (isNaN(a) && isNaN(b)) {
+            alert("请输入正确的数字的长和宽!");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
